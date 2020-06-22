@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript"  src="../js/myjavascript.js" ></script>
+	<link rel="stylesheet" type="text/css" href="../css/mycss.css">
+	<meta charset="utf-8">
+</head>
+<body>
+	
+	<div id="barra">
+		<nav id="espnav">
+				<div class="alinea" id="logo_size">
+						<img src="../img/logo.png" height="55" >	
+					</div>
+				<div class="menu">
+
+					<div class="alinea">
+						<a href="../index.html" class="sub" id="inicio">Inicio</a>	
+					</div>
+					<div class="alinea">
+						<a href="../html/quienes_somos.html" class="sub">Quienes Somos</a>	
+					</div>
+					<div class="alinea">
+						<a href="../html/estructura.html" class="sub">Estructura Organizacional</a>	
+					</div>
+					<div class="alinea">
+						<a href="../html/servicios.html" class="sub">Servicios</a>	
+					</div>
+					<div class="alinea">
+						<a href="../html/contactenos.html" class="sub">Contáctenos</a>
+					</div>
+					<div class="alinea">
+						<a href="modulo.html" class="sub">Modulo</a>
+					</div>
+					<div class="alinea" id="busqueda">
+						<input type="text" name="search" placeholder="Search.." id="buscar">
+					</div>
+					
+				</div>
+		</nav>
+	</div>
+	<div id="cuerpo">
+			<div class="bordes">
+					<h1 class="espacio">Ventas</h1>
+				<div class="espacio">
+					<label>Producto</label>
+					<select value="opciones" name="opciones" id="opciones" onchange="opcion()">
+						<option></option>
+						<option value="1">Llanta</option>
+						<option value="2">Transmision</option>
+						<option value="3">Pastillas</option>
+						<option value="4">Volante</option>
+						<option value="5">Motor</option>
+						<option value="6">Suspension</option>
+						<option value="7">Farolas</option>
+						<option value="8">Direccionales</option>
+						<option value="9">Aceite</option>
+						<option value="10">Rines</option>
+					</select>	
+				</div>
+				<div class="espacio">
+					<label>Forma de Pago</label>
+					<select value="pago" name="pago" id="pago" onchange="totales()">
+						<option></option>
+						<option value="0">Efectivo</option>
+						<option value="1">Tarjeta</option>
+					</select>	
+				</div>
+				<div class="espacio">
+					<label>Valor Unitario:</label>
+					<label id="valor"></label>	
+				</div>
+				<div class="espacio">
+					<label>Cantidad Disponible:</label>
+					<label id="cantidad_disp"></label>	
+				</div>
+				<div class="espacio">
+					<label>Cantidad a Vender:</label>
+					<input type="number" id="cantidad_vender" onchange="totales()"></input>	
+				</div>
+				<div class="espacio">
+					<label>Total:</label>
+					<label id="total"></label>
+				</div>
+				<div class="espacio" class="botones">
+					<button onclick="vender()">Vender</button>
+				</div>	
+		</div>
+		
+		<div class="bordes">
+			<div class="espacio">
+				<h1>Compras</h1>
+			</div>
+			<div class="espacio">
+				<label>Producto</label>
+				<select value="opciones2" name="opciones2" id="opciones2" onchange="opcion2()">
+					<option></option>
+					<option value="1">Llanta</option>
+					<option value="2">Transmision</option>
+					<option value="3">Pastillas</option>
+					<option value="4">Volante</option>
+					<option value="5">Motor</option>
+					<option value="6">Suspension</option>
+					<option value="7">Farolas</option>
+					<option value="8">Direccionales</option>
+					<option value="9">Aceite</option>
+					<option value="10">Rines</option>
+				</select>	
+			</div>
+			<div class="espacio">
+				<label>Cantidad Actual:</label>
+				<label id="cantidad_act"></label>	
+			</div>
+			<div class="espacio">
+				<label>Cantidad Minima:</label>
+				<label id="cantidad_min"></label>	
+			</div>
+			<div class="espacio">
+				<label>Cantidad a pedir:</label>
+				<input type="number" id="cantidad_pedir"></input> 	
+			</div>
+			<div class="espacio" class="botones">
+				<button onclick="comprar()">Comprar</button>
+			</div>			
+		</div>
+
+		<div class="bordes">
+			<div class="espacio">
+				<h1>Estadísticas</h1>
+			</div>
+			<div class="espacio">
+				<label>Producto más vendido:</label>
+				<label id="mas_vendido"></label> 	
+			</div>
+			<div class="espacio">
+				<label>Producto menos vendido:</label>
+				<label id="menos_vendido"></label> 	
+			</div>
+			<div class="espacio">
+				<label>Total vendido:</label>
+				<label id="total_vendido"></label> 	
+			</div>
+		</div>
+		<div class="bordes">
+			<div class="espacio">
+				<h1>Total de un producto</h1>
+			</div>
+			<div class="espacio">
+				<label>Producto</label>
+				<select value="opciones3" name="opciones3" id="opciones3" onchange="mostrar_total_producto()">
+					<option></option>
+					<option value="1">Llanta</option>
+					<option value="2">Transmision</option>
+					<option value="3">Pastillas</option>
+					<option value="4">Volante</option>
+					<option value="5">Motor</option>
+					<option value="6">Suspension</option>
+					<option value="7">Farolas</option>
+					<option value="8">Direccionales</option>
+					<option value="9">Aceite</option>
+					<option value="10">Rines</option>
+				</select>	
+			</div>
+			<div class="espacio">
+				<label>Total del  producto:</label>
+				<label id="mostrar_total"></label>
+			</div>
+			<div class="espacio" class="botones">
+				<button onclick="mostrar_total_producto()">Ver total</button>
+			</div>
+			
+		</div>
+		<div class="bordes">
+			<div class="espacio">
+				<h1>Cantidad pedida de un producto</h1>
+			</div>
+			<div class="espacio">
+				<label>Producto</label>
+				<select value="opciones4" name="opciones4" id="opciones4" onchange="mostrar_cantidad_pedidos()">
+					<option></option>
+					<option value="1">Llanta</option>
+					<option value="2">Transmision</option>
+					<option value="3">Pastillas</option>
+					<option value="4">Volante</option>
+					<option value="5">Motor</option>
+					<option value="6">Suspension</option>
+					<option value="7">Farolas</option>
+					<option value="8">Direccionales</option>
+					<option value="9">Aceite</option>
+					<option value="10">Rines</option>
+				</select>	
+			</div>
+			<div class="espacio">
+				<label>Cantidad del  producto:</label>
+				<label id="mostrar_cantpedidos"></label>
+			</div>
+			<div class="espacio" class="botones">
+				<button onclick="mostrar_cantidad_pedidos()">Ver total</button>
+			</div>
+		</div>	
+	</div>
+	
+</body>
+</html>
